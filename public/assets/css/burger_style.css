@@ -1,4 +1,14 @@
+
 body {
     background-color: lemonchiffon;
     text-align: center;
+}
+
+.top {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.status {
+    margin-bottom: 25px;
 }

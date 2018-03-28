@@ -1,35 +1,33 @@
-<h1>Burgers!</h1>
+<h1 class="top">Burgers!</h1>
 
-<h2>Uneaten Burgers</h2>
 
 <div class="container">
 
   <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-6 left">
 
-      <ul>
-        {{#each burgers}} {{#unless devoured}}
-        <li>
-          {{burger_name}}
+      <h2 class="status">Uneaten Burgers</h2>
 
-          <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-            {{#if devoured}}UNEAT!{{else}}EAT!{{/if}}
-          </button>
+      {{#each burgers}} {{#unless devoured}}
+      <div class="row">
+        {{burger_name}}
 
-          <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-        </li>
-        {{/unless}} {{/each}}
-      </ul>
+        <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+          {{#if devoured}}UNEAT!{{else}}EAT!{{/if}}
+        </button>
+
+        <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
+      </div>
+      {{/unless}} {{/each}}
 
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 right">
 
-      <h2>Eaten Burgers</h2>
+      <h2 class="status">Eaten Burgers</h2>
 
-      <ul>
         {{#each burgers}} {{#if devoured}}
-        <li>
+        <div class="row">
           {{burger_name}}
 
           <button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
@@ -37,13 +35,13 @@
           </button>
 
           <button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
-        </li> {{/if}} {{/each}}
-      </ul>
+        </div>
+         {{/if}} {{/each}}
 
     </div>
   </div>
 
-  <div class="row">
+  <div class="row top">
 
     <h2>Add a Burger</h2>
     <form class="create-form">
